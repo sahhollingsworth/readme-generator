@@ -15,8 +15,17 @@ The README Generator is a command line application to create README's based on u
 * When the user enters their GitHub username, it is added to the section of the README entitled Questions, with instructions on how to reach them with additional questions.
 * The Table of Contents has clickable links for each section that navigate user to the corresponding section of the README when clicked.
 
+## Installation
+Ensure you have Node.js installed locally to install packages to and from the public npm registry. [Node.js installation documentation.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+This project requires NPMjs and the Inquirer.js package. You can install both from the root folder in your local repo using command line as follows:
+
+1. `npm init -y`
+
+2. `npm install inquirer`
+
 ## Built with
-* [Inquirer.js package](https://www.npmjs.com/package/inquirer) - Common interactive command line user interfaces 
+* [Inquirer.js](https://www.npmjs.com/package/inquirer) - Package for common interactive command line user interfaces. 
 * [NPM](https://www.npmjs.com/) - Node package manager, used in conjunction with JS and Inquirer to support application logic and Command Line interface.
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript)
 * [Git](https://git-scm.com/doc) - Version control system to track changes to source code
