@@ -68,6 +68,11 @@ const questions = [
         type: "input",
         message: "What is your email address?",
         name: "email",
+        // validate: async ("email") => {
+        //     if (function validator.validate("email")) {
+
+        //     }    
+        // };
     },
 ]
 
