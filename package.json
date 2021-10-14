@@ -1,7 +1,7 @@
 {
   "name": "readme-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "The README Generator is a command line application to create README's based on user input.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/sahhollingsworth/readme-generator#readme",
   "dependencies": {
+    "email-validator": "^2.0.4",
     "inquirer": "^8.2.0"
-  }
+  },
+  "devDependencies": {}
 }
