@@ -53,7 +53,6 @@ const questions = [
             "Mozilla Public 2.0",
             "GNU GPLv2",
             "GNU GPLv3",
-            "The Unlicense",
             "None",
         ],
         name: "license",
