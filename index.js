@@ -1,7 +1,11 @@
 // Application dependencies, modules required for application to function
+// Command line user input interface
 const inquirer = require("inquirer");
+// // Email validation package for validating user input on Email question
 // const validator = require("email-validator");
+// Access file system to write data to (or create) README.md file
 const fs = require("fs");
+// Responsible for formatting README.md output with user input values
 const generateMarkdown = require("./lib/generateMarkdown.js");
 
 // Questions for user input
@@ -48,7 +52,6 @@ const questions = [
         message: "Select a license for this project.",
         choices: [
             "MIT",
-            "ISC",
             "Apache 2.0",
             "Mozilla Public 2.0",
             "GNU GPLv2",
@@ -79,16 +82,17 @@ const questions = [
 // Function to run inquirer module for command line prompts, then do something with user input values
 function initialize(){
     inquirer
+    // Launch the prompt interface (questions) in command line
     .prompt(questions)
-    //asynchronous code syncronization to write the question responses to a new file. If response, write to readme file otherwise callback
-    .then((response) => buildReadMe("TESTREADME.md", response))
+    //access the user response array and run the buildReadMe function to write the response to a new file.
+    .then((response) => buildReadMe("COMPLETEDREADME.md", response))
 }
 
-// Using formatting in markdownGenerator.js, generate README file from user data, else throw error
-// THIS FORMATTING NEEDS TLC -------------------------------------------
+// Using formatting in markdownGenerator.js, generate README.md file with data from the user response array.
 function buildReadMe(file, data) {
-    //create a file called TESTREADME.md, adding the input data transformed by markdown, and notify user of success. If error, notify user.
-    fs.writeFile("TESTREADME.md", generateMarkdown(data), function(error) {
+    // Create a file called COMPLETEDREADME.md, adding the input data transformed by generateMarkdown.js formatting.
+    fs.writeFile("COMPLETEDREADME.md", generateMarkdown(data), function(error) {
+        // If file created successfull, notify user of success in the command line interface. If error, notify user in the command line interface.
         if(error) {
             console.log("An unknown error occurred.")
         } else {
@@ -97,5 +101,5 @@ function buildReadMe(file, data) {
     })
 }
 
-// Initialize app
+// Start app logic
 initialize ();
