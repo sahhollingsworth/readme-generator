@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const validator = require("email-validator");
 const fs = require("fs");
+const generateMarkdown = require("./markdownGenerator.js");
 
 // Questions for user input
 const questions = [
@@ -33,7 +34,7 @@ const questions = [
         // Contribution Guidelines
         type: "input",
         message: "Provide contribution guidelines.",
-        name: "contribution-instruct",
+        name: "contributing-instruct",
     },
     {
         // Test Instructions
@@ -67,10 +68,18 @@ const questions = [
         // User's email address 
         type: "input",
         message: "What is your email address?",
-        name: "email",
+        name: "github",
         // validate: validator,
     },
 ]
 
-// Initialize app (initialize inquirer)
-inquirer.prompt(questions);
+// Function to run inquirer module for command line prompts, then do something with user input values
+function initialize(){
+    inquirer
+    .prompt(questions)
+    //asynchronous code syncronization to write the question responses to a new file. If response, write to readme file otherwise callback
+    .then((response) => ("TESTREADME.md", response))
+}
+
+// Initialize app
+initialize ();
