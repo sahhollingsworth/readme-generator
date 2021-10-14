@@ -16,9 +16,10 @@ The README Generator is a command line application to create README's based on u
 * The Table of Contents has clickable links for each section that navigate user to the corresponding section of the README when clicked.
 
 ## Built with
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - Used to create elements on the DOM
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript) - Used to for the user interaction and underlying password selection logic
-* [Git](https://git-scm.com/doc) - Used for version control system to track changes to source code
+* [Inquirer.js package](https://www.npmjs.com/package/inquirer) - Common interactive command line user interfaces 
+* [NPM](https://www.npmjs.com/) - Node package manager, used in conjunction with JS and Inquirer to support application logic and Command Line interface.
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript)
+* [Git](https://git-scm.com/doc) - Version control system to track changes to source code
 * [GitHub](https://docs.github.com/en) - Hosts the code repository
 
 ## Authors
