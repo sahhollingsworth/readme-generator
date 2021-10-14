@@ -1,8 +1,8 @@
 // Application dependencies, modules required for application to function
 const inquirer = require("inquirer");
-const validator = require("email-validator");
+// const validator = require("email-validator");
 const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown.js");
+const generateMarkdown = require("./lib/generateMarkdown.js");
 
 // Questions for user input
 const questions = [
@@ -34,13 +34,13 @@ const questions = [
         // Contribution Guidelines
         type: "input",
         message: "Provide contribution guidelines.",
-        name: "contributing-instruct",
+        name: "contributing",
     },
     {
         // Test Instructions
         type: "input",
         message: "Provide instructions for testing.",
-        name: "test-instruct",
+        name: "test",
     },
     {
         // License declaration
