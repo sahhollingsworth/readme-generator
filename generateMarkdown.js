@@ -1,5 +1,5 @@
 // Generate the actual readme/md file using the data from user command line input
-function generateREADME (data) {
+function generateFormat(data) {
     const markdown =
     // title of project
     `# ${data.title}
@@ -31,10 +31,12 @@ function generateREADME (data) {
     ${data.test-instruct}
 
     ## Questions
-    ${data.github}
-    ${data.email}
+    Please feel free reach out to me with any questions on Github at[${data.github}](https://github.com/${data.github}) or via email at 
+    ${data.email}.
 
     ## License
     ${data.license}`
     return markdown;
 }
+
+module.exports = generateFormat;

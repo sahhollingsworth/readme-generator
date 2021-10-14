@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const validator = require("email-validator");
 const fs = require("fs");
-const generateMarkdown = require("./markdownGenerator.js");
+const generateMarkdown = require("./generateMarkdown.js");
 
 // Questions for user input
 const questions = [
@@ -68,8 +68,7 @@ const questions = [
         // User's email address 
         type: "input",
         message: "What is your email address?",
-        name: "github",
-        // validate: validator,
+        name: "email",
     },
 ]
 
@@ -78,7 +77,20 @@ function initialize(){
     inquirer
     .prompt(questions)
     //asynchronous code syncronization to write the question responses to a new file. If response, write to readme file otherwise callback
-    .then((response) => ("TESTREADME.md", response))
+    .then((response) => buildReadMe("TESTREADME.md", response))
+}
+
+// Using formatting in markdownGenerator.js, generate README file from user data, else throw error
+// THIS FORMATTING NEEDS TLC -------------------------------------------
+function buildReadMe(file, data) {
+    //create a file called TESTREADME.md, adding the input data transformed by markdown, and notify user of success. If error, notify user.
+    fs.writeFile("TESTREADME.md", generateMarkdown(data), function(error) {
+        if(error) {
+            console.log("An unknown error occurred.")
+        } else {
+            console.log("Your README was created!")
+        }
+    })
 }
 
 // Initialize app
