@@ -1,8 +1,6 @@
 // Application dependencies, modules required for application to function
 // Command line user input interface
 const inquirer = require("inquirer");
-// // Email validation package for validating user input on Email question
-// const validator = require("email-validator");
 // Access file system to write data to (or create) README.md file
 const fs = require("fs");
 // Responsible for formatting README.md output with user input values
@@ -71,11 +69,6 @@ const questions = [
         type: "input",
         message: "What is your email address?",
         name: "email",
-        // validate: async ("email") => {
-        //     if (function validator.validate("email")) {
-
-        //     }    
-        // };
     },
 ]
 
