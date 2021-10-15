@@ -2,7 +2,8 @@
 The README Generator is a command line application to create README's based on user input. The ability to quickly generate a pre-formatted README via command line allows developers to focus more time on application code.
 
 ## Application
-![Image screenshot of README Generator application](tbd)
+Demo of README Generator application. [See a higher quality video here.](https://watch.screencastify.com/v/9YB8gygSNB721JhINLjn).
+![GIF README Generator application demo](./images/readme-generator-demo_readme.gif)
 
 ### Command Line Interface
 Command line interface - Mid-prompt question set.
